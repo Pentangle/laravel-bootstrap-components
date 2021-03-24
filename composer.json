@@ -1,0 +1,53 @@
+{
+    "name": "pentangle/bootstrap-components",
+    "description": "Re-usable components for Laravel and Bootstrap 4",
+    "keywords": [
+        "pentangle",
+        "bootstrap-components"
+    ],
+    "homepage": "https://github.com/pentangle/bootstrap-components",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pentangle Technology",
+            "email": "sean.poynter-smith@pentangletechnology.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pentangle\\BootstrapComponents\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pentangle\\BootstrapComponents\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pentangle\\BootstrapComponents\\BootstrapComponentsServiceProvider"
+            ],
+            "aliases": {
+                "BootstrapComponents": "Pentangle\\BootstrapComponents\\BootstrapComponentsFacade"
+            }
+        }
+    }
+}
