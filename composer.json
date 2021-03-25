@@ -1,11 +1,12 @@
 {
-    "name": "pentangle/bootstrap-components",
+    "name": "pentangle/laravel-bootstrap-components",
     "description": "Re-usable components for Laravel and Bootstrap 4",
     "keywords": [
         "pentangle",
-        "bootstrap-components"
+        "bootstrap-components",
+        "laravel"
     ],
-    "homepage": "https://github.com/pentangle/bootstrap-components",
+    "homepage": "https://github.com/pentangle/laravel-bootstrap-components",
     "license": "MIT",
     "type": "library",
     "authors": [
