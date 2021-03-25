@@ -51,6 +51,6 @@ class Select extends BaseInput
      */
     public function isSelected($option): string
     {
-        return $option == old($this->name, $this->value) ? 'selected' : '';
+        return $option === old($this->name, $this->value) ? 'selected' : '';
     }
 }
