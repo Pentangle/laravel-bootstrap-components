@@ -17,16 +17,23 @@ class Select extends BaseInput
     /**
      * Create a new component instance.
      *
-     * @param string           $name
-     * @param array|Collection $options
-     * @param string|null      $label
-     * @param array|string     $inputAttributes
-     * @param string|int|null  $value
-     * @param string|null      $prepend
-     * @param string|null      $append
+     * @param  string  $name
+     * @param  array|Collection  $options
+     * @param  string|null  $label
+     * @param  array|string  $inputAttributes
+     * @param  string|int|null  $value
+     * @param  string|null  $prepend
+     * @param  string|null  $append
      */
-    public function __construct(string $name, $options, ?string $label = null, $inputAttributes = [], $value = null, ?string $prepend = null, ?string $append = null)
-    {
+    public function __construct(
+        string $name,
+        $options,
+        ?string $label = null,
+        $inputAttributes = [],
+        $value = null,
+        ?string $prepend = null,
+        ?string $append = null
+    ) {
         parent::__construct($name, $label, $inputAttributes, $value, $prepend, $append);
 
         $this->options = $options instanceof Collection ? $options->toArray() : $options;
@@ -45,12 +52,15 @@ class Select extends BaseInput
     /**
      * Determine if the given option is the current selected option.
      *
-     * @param string|int $option
+     * @param  string|int  $option
      *
      * @return string
      */
     public function isSelected($option): string
     {
+        if (is_numeric($this->value) && $this->value !== null) {
+            return $option == old($this->name, $this->value) ? 'selected' : '';
+        }
         return $option === old($this->name, $this->value) ? 'selected' : '';
     }
 }

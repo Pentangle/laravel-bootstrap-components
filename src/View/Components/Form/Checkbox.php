@@ -33,26 +33,40 @@ class Checkbox extends FormComponent
     public string $type;
 
     /**
+     * @var bool
+     */
+    public bool $required;
+
+    /**
      * Create a new component instance.
      *
-     * @param string       $name
-     * @param string|null  $idName
-     * @param string|null  $label
-     * @param array|string $inputAttributes
-     * @param mixed        $value
-     * @param bool         $inline
-     * @param string       $type
-     * @param bool         $checked
+     * @param  string  $name
+     * @param  string|null  $idName
+     * @param  string|null  $label
+     * @param  array|string  $inputAttributes
+     * @param  mixed  $value
+     * @param  bool  $inline
+     * @param  string  $type
+     * @param  bool  $checked
      */
-    public function __construct(string $name, ?string $idName = null, ?string $label = null, $inputAttributes = [], $value = null, bool $inline = false, string $type = 'checkbox', ?bool $checked = false)
-    {
-        parent::__construct($name, $label, $inputAttributes, $value);
+    public function __construct(
+        string $name,
+        ?string $idName = null,
+        ?string $label = null,
+        $inputAttributes = [],
+        $value = null,
+        bool $inline = false,
+        string $type = 'checkbox',
+        ?bool $checked = false
+    ) {
+        parent::__construct($name, $label, $inputAttributes, $value, $required = false);
 
         $this->idName = $idName ? $idName : $this->name;
         $this->value = $value;
         $this->inline = $inline ? ' '.config('library.css.form.checkbox.inline') : '';
         $this->checked = $checked ? 'checked' : '';
         $this->type = $type;
+        $this->required = $required;
     }
 
     /**
