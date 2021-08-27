@@ -2,7 +2,7 @@
 
     @isset($prepend)
         <div class="{{ config('library.css.form.input.prepend') }}">
-            <div class="{{ config('library.css.form.input.text') }}">{{ $prepend }}</div>
+            <div class="{{ config('library.css.form.input.text') }}">{!! $prepend !!}</div>
         </div>
     @endisset
 
@@ -10,7 +10,7 @@
 
     @isset($append)
         <div class="{{ config('library.css.form.input.append') }}">
-            <div class="{{ config('library.css.form.input.text') }}">{{ $append }}</div>
+            <div class="{{ config('library.css.form.input.text') }}">{!! $append !!}</div>
         </div>
     @endisset
 
